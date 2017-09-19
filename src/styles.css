@@ -1,1 +1,96 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 /* You can add global styles to this file, and also import other style files */
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: Roboto, sans-serif;
+  background-color: #fafafa;
+}
+
+@media (max-width: 375px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+  div.scrollmenu .scrollitem {
+    width: 60% !important;
+  }
+}
+
+.app-search-toolbar {
+  background-color: #ffffff;
+
+}
+
+div.scrollmenu {
+  padding: 20px 0px 20px 0px;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu .scrollitem {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  width: 33.333%;
+  margin: 0px 20px 0px 0px;
+}
+
+div.scrollmenu .scrollitem:last-child {
+  margin: 0px !important;
+}
+
+.container{
+  padding: 0px 5px 0px 5px;
+}
+.subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.content-subtitle{
+  margin-bottom: 10px;
+}
+
+.diffusion-user{
+   font-weight: bold;
+   font-size: 16px;
+   margin-bottom: 8px !important;
+ }
+.diffusion-item{
+  border-bottom: solid 1px #ddd;
+}
+.diffusion-content {
+  font-size: 16px;
+}
+.diffusion-actions {
+  color: darkgray;
+}
+
+.diffusion-actions .active {
+  color: deepskyblue;
+}
+.diffusion-date{
+  font-size: 12px;
+}
+.diffusion-header{
+  margin-bottom: 16px;
+}
+.diffusion-header span {
+  font-weight: bold;
+}
+.diffusion-item.comment-item {
+  padding-bottom: 0px;
+}
