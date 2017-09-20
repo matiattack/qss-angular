@@ -25,12 +25,8 @@ import {DisciplineEntity} from "../../../entities/discipline.entity";
 <div *ngIf="user != null || disciplines != null">
   <md-card [ngStyle]="{'min-height' : appHeight}">
   
-    <!--<md-card-header>
-      <img md-card-avatar src="{{authUser.image.path}}" style="width: 46px;flex-shrink: 0;">
-      <md-card-title style="margin-top: 10px;">{{authUser.name}} {{authUser.lastName}}</md-card-title>
-      <md-card-subtitle>{{this.commentText}}</md-card-subtitle>
-    </md-card-header>-->
-    
+      
+      
     <md-card-content>
     
       <md-input-container style="width: 100%;" floatPlaceholder="never">
