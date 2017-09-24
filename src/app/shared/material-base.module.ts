@@ -1,5 +1,8 @@
 import {NgModule} from "@angular/core";
-import {MdDialogModule, MdButtonModule, MdToolbarModule, MdSidenavModule, MdNativeDateModule} from "@angular/material";
+import {
+  MdDialogModule, MdButtonModule, MdToolbarModule, MdSidenavModule, MdNativeDateModule,
+  MdChipsModule
+} from "@angular/material";
 import {MdCardModule} from '@angular/material';
 import {MdInputModule} from '@angular/material';
 import {MdProgressSpinnerModule} from '@angular/material';
@@ -33,6 +36,7 @@ import {MdListModule} from '@angular/material';
     MdSlideToggleModule,
     MdDatepickerModule,
     MdNativeDateModule,
+    MdChipsModule,
     MdListModule
   ],
   exports: [
@@ -53,6 +57,7 @@ import {MdListModule} from '@angular/material';
     MdSlideToggleModule,
     MdDatepickerModule,
     MdNativeDateModule,
+    MdChipsModule,
     MdListModule
   ]
 })

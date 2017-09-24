@@ -2,7 +2,7 @@ import {Component, Input} from "@angular/core";
 import {UserEntity} from "../../entities/user.entity";
 import {AuthService} from "../../services/auth.service";
 import {UserDiffusionEntity} from "../../entities/user-diffusion.entity";
-import {UserDiffusionService} from "../../services/user-diffusion.service";
+import {UserDiffusionService} from "../../services/http/user-diffusion.service";
 import {ReactionEntity} from "../../entities/reaction.entity";
 
 @Component({

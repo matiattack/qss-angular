@@ -1,23 +1,23 @@
 import {Component, OnChanges, SimpleChanges} from "@angular/core";
-import {UserService} from "../../../../services/user.service";
+import {UserService} from "../../../../services/http/user.service";
 import {ActivatedRoute} from "@angular/router";
 import {AuthService} from "../../../../services/auth.service";
 import {UserEntity} from "../../../../entities/user.entity";
-import {UserDiffusionService} from "../../../../services/user-diffusion.service";
+import {UserDiffusionService} from "../../../../services/http/user-diffusion.service";
 import {UserDiffusionEntity} from "../../../../entities/user-diffusion.entity";
 import {Input} from "@angular/core";
 import {DiffusionLink} from "../../../../caches/diffusion.link";
 
 
 @Component({
-  selector: 'user-comments',
+  selector: 'user-publications',
   template: `
 <div *ngIf="comments.length > 0">
   <comment-list [publications]="comments"></comment-list>
 </div>
 `
 })
-export class UserCommentsComponent implements OnChanges{
+export class UserPublicationsComponent implements OnChanges{
 
 
   @Input()

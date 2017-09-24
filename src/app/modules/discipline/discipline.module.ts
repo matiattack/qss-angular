@@ -9,13 +9,15 @@ import {MdChipsModule} from '@angular/material';
 import {DisciplineRoutingModule} from "./discipline-routing.module";
 import {DisciplineHomeComponent} from "./components/discipline-home.component";
 import {MaterialBaseModule} from "../../shared/material-base.module";
-import {DisciplineService} from "../../services/discipline.service";
+import {DisciplineService} from "../../services/http/discipline.service";
 import {DisciplineDetailComponent} from "./components/discipline-detail.component";
 import {DisciplineFilterComponent} from "./components/discipline-home/discipline-filter.component";
 import {DisciplineDetailTabsComponent} from "./components/discipline-detail/discipline-detail-tabs.component";
 import {DisciplineFollowersComponent} from "./components/discipline-detail/discipline-followers.component";
 import {UserListComponent} from "../../shared/components/user-list.component";
 import {FollowActionDirective} from "../../directives/follow-action-directive";
+import {DisciplinePublicationsComponent} from "./components/discipline-detail/discipline-publications.component";
+import {SharedBaseModule} from "../../shared/shared-base.module";
 
 @NgModule({
   imports: [
@@ -28,6 +30,7 @@ import {FollowActionDirective} from "../../directives/follow-action-directive";
     MdAutocompleteModule,
     MdSelectModule,
     MdChipsModule,
+    SharedBaseModule,
     MdTabsModule
   ],
   declarations: [
@@ -36,6 +39,7 @@ import {FollowActionDirective} from "../../directives/follow-action-directive";
     DisciplineFilterComponent,
     DisciplineDetailTabsComponent,
     DisciplineFollowersComponent,
+    DisciplinePublicationsComponent,
     UserListComponent,
     FollowActionDirective
   ],

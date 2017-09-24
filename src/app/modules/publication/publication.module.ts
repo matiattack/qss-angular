@@ -16,7 +16,6 @@ import {MdChipsModule, MdTabsModule} from "@angular/material";
     FormsModule,
     HttpModule,
     PublicationRoutingModule,
-    MdChipsModule,
     SharedBaseModule,
     MdTabsModule
   ],

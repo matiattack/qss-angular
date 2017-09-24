@@ -3,7 +3,7 @@ import {FormControlService} from "../services/form-control.service";
 import {FormGroup} from "@angular/forms";
 import {ScheduleEntity} from "../../entities/schedule.entity";
 import {Input} from "@angular/core";
-import {ScheduleService, Day} from "../../services/schedule.service";
+import {ScheduleService, Day} from "../../services/http/schedule.service";
 
 @Component({
   selector: 'schedule-form',

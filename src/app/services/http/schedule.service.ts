@@ -1,10 +1,10 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 
-import {AppSetting} from "../settings/app.setting";
-import {AuthService} from "./auth.service";
-import {ScheduleEntity} from "../entities/schedule.entity";
-import {EntityBase} from "../entities/base/entity-base.entity";
+import {AppSetting} from "../../settings/app.setting";
+import {AuthService} from "../auth.service";
+import {ScheduleEntity} from "../../entities/schedule.entity";
+import {EntityBase} from "../../entities/base/entity-base.entity";
 
 export class Day {
   public schedules: ScheduleEntity[];

@@ -1,16 +1,19 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 
-import {AppSetting} from "../settings/app.setting";
-import {LinkDataEntity} from "../entities/link-data.entity";
-import {UserDiffusionEntity} from "../entities/user-diffusion.entity";
-import {EntityBase} from "../entities/base/entity-base.entity";
-import {LinkDataInterface} from "../interfaces/link-data.interface";
+import {AppSetting} from "../../settings/app.setting";
+import {LinkDataEntity} from "../../entities/link-data.entity";
+import {UserDiffusionEntity} from "../../entities/user-diffusion.entity";
+import {EntityBase} from "../../entities/base/entity-base.entity";
+import {LinkDataInterface} from "../../interfaces/link-data.interface";
 import {Observable} from "rxjs";
-import {ReactionEntity} from "../entities/reaction.entity";
+import {ReactionEntity} from "../../entities/reaction.entity";
+import {LinkRequest} from "./request/link.request";
+import {UserDiffusionRequest} from "./request/user-diffusion.request";
+import {HttpBase} from "./http-base.service";
 
 @Injectable()
-export class UserDiffusionService {
+export class UserDiffusionService implements HttpBase {
 
   constructor(private http: Http) {}
 
@@ -27,14 +30,16 @@ export class UserDiffusionService {
   byUser(id: number){
     return this.http.get(AppSetting.URI(this.baseUrl + '/user/' + id))
       .map(response => {
+        console.log(response.json().data);
         return EntityBase.parseArray(UserDiffusionEntity, response.json().data);
       });
   }
 
   save(comment: UserDiffusionEntity){
-    let request = this.parseToRequest(comment);
+    let request = this.toRequest(comment);
     return this.http.post(AppSetting.URI(this.baseUrl), request)
       .map(response => {
+        console.log(response.json().data);
         return true;
       });
   }
@@ -103,18 +108,26 @@ export class UserDiffusionService {
     return linkData;
   }
 
-  private parseToRequest(comment: UserDiffusionEntity): any {
+  toRequest(comment: UserDiffusionEntity): UserDiffusionRequest {
 
-    let request = {
+    let userDiffusionRequest: UserDiffusionRequest = {
       text: comment.text,
-      user: comment.targetUser.id,
-      disciplines: comment.disciplines,
-      link: null,
-      image: null
+      user: comment.targetUser.id
     };
 
+    if(comment.disciplines != null && comment.disciplines.length > 0){
+      userDiffusionRequest.disciplines = [];
+      comment.disciplines.forEach((object) => {
+        userDiffusionRequest.disciplines.push(object.id);
+      });
+    }
+
+    if(comment.image){
+      userDiffusionRequest.image.path = comment.image.path;
+    }
+
     if(comment.linkData != null){
-      request.link = {
+      userDiffusionRequest.link = {
         title: comment.linkData.title,
         url: comment.linkData.url,
         image: comment.linkData.image,
@@ -123,13 +136,7 @@ export class UserDiffusionService {
       }
     }
 
-    if(comment.image){
-      request.image = {
-        path: comment.image.path
-      }
-    }
-
-    return request;
+    return userDiffusionRequest;
   }
 
 

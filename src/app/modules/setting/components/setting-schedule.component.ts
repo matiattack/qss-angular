@@ -1,7 +1,7 @@
 import {Component, ViewContainerRef} from "@angular/core";
 import {UserEntity} from "../../../entities/user.entity";
 import {AuthService} from "../../../services/auth.service";
-import {ScheduleService, Day} from "../../../services/schedule.service";
+import {ScheduleService, Day} from "../../../services/http/schedule.service";
 import {ScheduleEntity} from "../../../entities/schedule.entity";
 import {DialogService} from "../../../shared/services/dialog.service";
 import {ToolbarService} from "../../../shared/services/toolbar.service";

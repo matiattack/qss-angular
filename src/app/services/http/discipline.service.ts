@@ -1,10 +1,11 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
 
-import {DisciplineEntity} from "../entities/discipline.entity";
-import {AppSetting} from "../settings/app.setting";
-import {CategoryEntity} from "../entities/category.entity";
-import {EntityBase} from "../entities/base/entity-base.entity";
+import {DisciplineEntity} from "../../entities/discipline.entity";
+import {AppSetting} from "../../settings/app.setting";
+import {CategoryEntity} from "../../entities/category.entity";
+import {EntityBase} from "../../entities/base/entity-base.entity";
+import {UserDiffusionEntity} from "../../entities/user-diffusion.entity";
 
 @Injectable()
 export class DisciplineService {
@@ -25,12 +26,12 @@ export class DisciplineService {
       });
   }
 
-  /*search(quest: string, category: number){
-    return this.http.post(AppSetting.URI('disciplines/search'), { quest: quest, category: category })
+  publications(id: number){
+    return this.http.get(AppSetting.URI('disciplines/' + id + '/publications'), {})
       .map(response => {
-        console.log(response);
+        return EntityBase.parseArray(UserDiffusionEntity, response.json().data);
       });
-  }*/
+  }
 
   follow(id: number, action: boolean) {
     return this.http.post(AppSetting.URI('disciplines/' + id + '/follow'), {action: action})

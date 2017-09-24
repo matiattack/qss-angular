@@ -59,6 +59,16 @@ export class UserDiffusionEntity extends EntityBase<UserDiffusionEntity> impleme
       this._reactions = EntityBase.parseArray(ReactionEntity, input.reacciones);
     }
 
+    if(input.hasOwnProperty('publicacion_disciplinas') && input.publicacion_disciplinas != null && input.publicacion_disciplinas.length > 0){
+      this._disciplines = [];
+      input.publicacion_disciplinas.forEach((object) => {
+        if(object.hasOwnProperty('disciplina')){
+          let discipline: DisciplineEntity = new DisciplineEntity().parse(object.disciplina);
+          this._disciplines.push(discipline);
+        }
+      });
+    }
+
   }
 
 
@@ -104,5 +114,45 @@ export class UserDiffusionEntity extends EntityBase<UserDiffusionEntity> impleme
 
   get disciplines(): DisciplineEntity[] {
     return this._disciplines;
+  }
+
+  set id(value: number) {
+    this._id = value;
+  }
+
+  set text(value: string) {
+    this._text = value;
+  }
+
+  set modification(value: string) {
+    this._modification = value;
+  }
+
+  set registry(value: string) {
+    this._registry = value;
+  }
+
+  set image(value: ImageEntity) {
+    this._image = value;
+  }
+
+  set user(value: UserEntity) {
+    this._user = value;
+  }
+
+  set targetUser(value: UserEntity) {
+    this._targetUser = value;
+  }
+
+  set linkData(value: LinkDataEntity) {
+    this._linkData = value;
+  }
+
+  set reactions(value: ReactionEntity[]) {
+    this._reactions = value;
+  }
+
+  set disciplines(value: DisciplineEntity[]) {
+    this._disciplines = value;
   }
 }

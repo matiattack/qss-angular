@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
-import {ImageEntity} from "../entities/image.entity";
-import {EntityBase} from "../entities/base/entity-base.entity";
-import {AppSetting} from "../settings/app.setting";
+import {ImageEntity} from "../../entities/image.entity";
+import {EntityBase} from "../../entities/base/entity-base.entity";
+import {AppSetting} from "../../settings/app.setting";
 
 @Injectable()
 export class ImageService {

@@ -4,7 +4,7 @@ import {UserEntity} from "../../../entities/user.entity";
 import {AuthService} from "../../../services/auth.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {DialogService} from "../../../shared/services/dialog.service";
-import {UserDiffusionService} from "../../../services/user-diffusion.service";
+import {UserDiffusionService} from "../../../services/http/user-diffusion.service";
 import {UserDiffusionEntity} from "../../../entities/user-diffusion.entity";
 import {DiffusionLink} from "../../../caches/diffusion.link";
 import {ToolbarService} from "../../../shared/services/toolbar.service";
@@ -24,9 +24,7 @@ import {DisciplineEntity} from "../../../entities/discipline.entity";
 
 <div *ngIf="user != null || disciplines != null">
   <md-card [ngStyle]="{'min-height' : appHeight}">
-  
-      
-      
+
     <md-card-content>
     
       <md-input-container style="width: 100%;" floatPlaceholder="never">
@@ -63,7 +61,7 @@ import {DisciplineEntity} from "../../../entities/discipline.entity";
     <md-card-content *ngIf="disciplines != null && disciplines.length > 0">
       <md-chip-list>
         <md-chip *ngFor="let discipline of disciplines">{{discipline.name}}&nbsp;
-          <button md-mini-fab><md-icon>delete</md-icon></button>
+          <md-icon mdChipRemove>cancel</md-icon>
         </md-chip>
       </md-chip-list>
     </md-card-content>

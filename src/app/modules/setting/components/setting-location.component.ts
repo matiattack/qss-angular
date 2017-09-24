@@ -1,6 +1,6 @@
 import {Component, ViewContainerRef} from "@angular/core";
 import {LocationInterface} from "../../../interfaces/location.interface";
-import {LocationService} from "../../../services/location.service";
+import {LocationService} from "../../../services/http/location.service";
 import {StreetEntity} from "../../../entities/street.entity";
 import {AuthService} from "../../../services/auth.service";
 import {UserEntity} from "../../../entities/user.entity";

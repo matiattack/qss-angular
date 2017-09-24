@@ -2,7 +2,7 @@ import {Component, Input, OnChanges, SimpleChanges} from "@angular/core";
 import {UserEntity} from "../../../../entities/user.entity";
 import {AuthService} from "../../../../services/auth.service";
 import {ScheduleEntity} from "../../../../entities/schedule.entity";
-import {ScheduleService, Day} from "../../../../services/schedule.service";
+import {ScheduleService, Day} from "../../../../services/http/schedule.service";
 import {SchedulesByDayPipe} from "../../../../shared/pipes/schedules-by-day.pipe";
 import {DiffusionLink} from "../../../../caches/diffusion.link";
 

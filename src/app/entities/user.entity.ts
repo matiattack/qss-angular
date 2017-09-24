@@ -193,4 +193,69 @@ export class UserEntity extends EntityBase<UserEntity> implements IEntityBase{
   get username(): string {
     return this._username;
   }
+
+
+  set id(value: number) {
+    this._id = value;
+  }
+
+  set state(value: string) {
+    this._state = value;
+  }
+
+  set name(value: string) {
+    this._name = value;
+  }
+
+  set lastName(value: string) {
+    this._lastName = value;
+  }
+
+  set email(value: string) {
+    this._email = value;
+  }
+
+  set username(value: string) {
+    this._username = value;
+  }
+
+  set birthday(value: string) {
+    this._birthday = value;
+  }
+
+  set description(value: string) {
+    this._description = value;
+  }
+
+  set sex(value: number) {
+    this._sex = value;
+  }
+
+  set image(value: ImageEntity) {
+    this._image = value;
+  }
+
+  set disciplines(value: DisciplineEntity[]) {
+    this._disciplines = value;
+  }
+
+  set followers(value: UserEntity[]) {
+    this._followers = value;
+  }
+
+  set followersCount(value: number) {
+    this._followersCount = value;
+  }
+
+  set following(value: UserEntity[]) {
+    this._following = value;
+  }
+
+  set followingCount(value: number) {
+    this._followingCount = value;
+  }
+
+  set estado(value: string) {
+    this._estado = value;
+  }
 }

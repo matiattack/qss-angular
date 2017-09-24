@@ -1,6 +1,6 @@
 import {Component, Input, DoCheck, Output, EventEmitter} from "@angular/core";
 import {ScheduleEntity} from "../../entities/schedule.entity";
-import {ScheduleService, Day} from "../../services/schedule.service";
+import {ScheduleService, Day} from "../../services/http/schedule.service";
 import {SchedulesByDayPipe} from "../pipes/schedules-by-day.pipe";
 import {DiffusionLink} from "../../caches/diffusion.link";
 

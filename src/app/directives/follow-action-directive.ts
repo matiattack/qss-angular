@@ -2,7 +2,7 @@ import {
   Directive, ElementRef, Input, HostListener, Output, EventEmitter
 } from '@angular/core';
 import {UserEntity} from "../entities/user.entity";
-import {UserService} from "../services/user.service";
+import {UserService} from "../services/http/user.service";
 import {AuthService} from "../services/auth.service";
 
 

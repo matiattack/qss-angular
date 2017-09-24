@@ -1,5 +1,5 @@
 import {Component, OnChanges, SimpleChanges} from "@angular/core";
-import {UserService} from "../../../../services/user.service";
+import {UserService} from "../../../../services/http/user.service";
 import {ActivatedRoute} from "@angular/router";
 import {UserEntity} from "../../../../entities/user.entity";
 import {Input} from "@angular/core";

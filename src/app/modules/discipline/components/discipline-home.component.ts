@@ -1,6 +1,6 @@
 import {Component, ViewContainerRef} from "@angular/core";
 
-import {DisciplineService} from "../../../services/discipline.service";
+import {DisciplineService} from "../../../services/http/discipline.service";
 import {CategoryEntity} from "../../../entities/category.entity";
 import {FormControl} from '@angular/forms';
 

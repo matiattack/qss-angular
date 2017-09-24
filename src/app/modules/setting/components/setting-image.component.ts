@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {UserEntity} from "../../../entities/user.entity";
 import {AuthService} from "../../../services/auth.service";
-import {ImageService} from "../../../services/image.service";
+import {ImageService} from "../../../services/http/image.service";
 import {ImageEntity} from "../../../entities/image.entity";
 import {AppSetting} from "../../../settings/app.setting";
 

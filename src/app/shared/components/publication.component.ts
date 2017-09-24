@@ -2,7 +2,7 @@ import {Component, Input} from "@angular/core";
 import {UserEntity} from "../../entities/user.entity";
 import {AuthService} from "../../services/auth.service";
 import {UserDiffusionEntity} from "../../entities/user-diffusion.entity";
-import {UserDiffusionService} from "../../services/user-diffusion.service";
+import {UserDiffusionService} from "../../services/http/user-diffusion.service";
 import {ReactionEntity} from "../../entities/reaction.entity";
 import {DiffusionLink} from "../../caches/diffusion.link";
 
@@ -33,9 +33,16 @@ import {
   
   <md-card-header class="diffusion-header" *ngIf="publication.user != null">
     <img md-card-avatar src="{{publication.user.image.path}}" style="width: 46px;">
-    <md-card-title class="diffusion-user">{{publication.user.name}} {{publication.user.lastName}}</md-card-title>
+    <md-card-title class="diffusion-user"><a routerLink="/user/{{publication.user.id}}">{{publication.user.name}} {{publication.user.lastName}}</a></md-card-title>
     <md-card-subtitle class="diffusion-date">{{publication.registry}}</md-card-subtitle>
   </md-card-header>
+  
+  <md-card-content *ngIf="publication.disciplines != null && publication.disciplines.length > 0">
+    <md-card-subtitle>Refiriendose a la(s) discipina(s)</md-card-subtitle>
+    <md-chip-list>
+      <md-chip *ngFor="let discipline of publication.disciplines">{{discipline.name}}</md-chip>
+    </md-chip-list>
+  </md-card-content>
   
   <md-card-content class="diffusion-content">
     <p>

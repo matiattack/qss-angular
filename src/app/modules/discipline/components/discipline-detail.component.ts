@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {ActivatedRoute} from "@angular/router";
-import {DisciplineService} from "../../../services/discipline.service";
+import {DisciplineService} from "../../../services/http/discipline.service";
 import {DisciplineEntity} from "../../../entities/discipline.entity";
 import {AuthService} from "../../../services/auth.service";
 

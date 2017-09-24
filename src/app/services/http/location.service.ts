@@ -1,9 +1,9 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
-import {AppSetting} from "../settings/app.setting";
-import {StreetEntity} from "../entities/street.entity";
-import {LocationInterface} from "../interfaces/location.interface";
-import {EntityBase} from "../entities/base/entity-base.entity";
+import {AppSetting} from "../../settings/app.setting";
+import {StreetEntity} from "../../entities/street.entity";
+import {LocationInterface} from "../../interfaces/location.interface";
+import {EntityBase} from "../../entities/base/entity-base.entity";
 
 @Injectable()
 export class LocationService {

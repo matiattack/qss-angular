@@ -44,7 +44,7 @@ import {FooterInterface} from "./interfaces/footer.interface";
 <app-toolbar (onMenu)="sidenav.toggle();" style="position: fixed; top:0; left: 0px; z-index: 1000; width: 100%;"></app-toolbar>
 
 <md-sidenav-container style="padding-top: 56px;">
-  <md-sidenav #sidenav class="app-sidenav" style="padding-top: 56px;">
+  <md-sidenav #sidenav class="app-sidenav" style="padding-top: 56px;" mode="over">
     
     <md-nav-list *ngIf="userApp != null">    
       <md-list-item>

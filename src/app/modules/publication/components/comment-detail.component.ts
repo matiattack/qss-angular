@@ -4,7 +4,7 @@ import {UserDiffusionEntity} from "../../../entities/user-diffusion.entity";
 import {UserEntity} from "../../../entities/user.entity";
 import {AuthService} from "../../../services/auth.service";
 import {ReactionEntity} from "../../../entities/reaction.entity";
-import {UserDiffusionService} from "../../../services/user-diffusion.service";
+import {UserDiffusionService} from "../../../services/http/user-diffusion.service";
 
 
 @Component({

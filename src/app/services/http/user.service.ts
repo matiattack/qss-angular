@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Http} from "@angular/http";
-import {UserEntity} from "../entities/user.entity";
-import {AppSetting} from "../settings/app.setting";
+import {UserEntity} from "../../entities/user.entity";
+import {AppSetting} from "../../settings/app.setting";
 import {Observable} from "rxjs";
 
 @Injectable()

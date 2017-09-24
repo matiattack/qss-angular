@@ -2,7 +2,7 @@ import {Component, Input, SimpleChanges} from "@angular/core";
 import {DisciplineEntity} from "../../../../entities/discipline.entity";
 import {UserEntity} from "../../../../entities/user.entity";
 import {AuthService} from "../../../../services/auth.service";
-import {DisciplineService} from "../../../../services/discipline.service";
+import {DisciplineService} from "../../../../services/http/discipline.service";
 import {ToolbarService} from "../../../../shared/services/toolbar.service";
 import {DiffusionInterface} from "../../../../interfaces/diffusion.interface";
 import {DiffusionLink} from "../../../../caches/diffusion.link";
@@ -32,7 +32,7 @@ import {DiffusionLink} from "../../../../caches/diffusion.link";
     <ng-template md-tab-label >
       EVENTOS Y PUBLICACIONES
     </ng-template>
-    <h5>Aqui estaran los eventos</h5>
+    <discipline-publications [disciplineId]="discipline.id"></discipline-publications>
   </md-tab>
 
   <md-tab>

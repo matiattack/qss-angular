@@ -11,17 +11,17 @@ import {SettingRoutingModule} from "./setting-routing.module";
 import {SettingImageComponent} from "./components/setting-image.component";
 import {DialogService} from "../../shared/services/dialog.service";
 import {MdMenuModule} from '@angular/material';
-import {ImageService} from "../../services/image.service";
+import {ImageService} from "../../services/http/image.service";
 import {SharedBaseModule} from "../../shared/shared-base.module";
 import {SettingAccountComponent} from "./components/setting-account.component";
 import {UserSharedModule} from "../../shared/user-shared.module";
 import {SettingPasswordComponent} from "./components/setting-password.component";
 import {SettingScheduleComponent} from "./components/setting-schedule.component";
-import {ScheduleService} from "../../services/schedule.service";
+import {ScheduleService} from "../../services/http/schedule.service";
 import {ScheduleFormComponent} from "../../shared/forms/schedule.form";
 import {SettingLocationComponent} from "./components/setting-location.component";
 import {GoogleMapModule} from "../../shared/google-map.module";
-import {LocationService} from "../../services/location.service";
+import {LocationService} from "../../services/http/location.service";
 
 
 @NgModule({

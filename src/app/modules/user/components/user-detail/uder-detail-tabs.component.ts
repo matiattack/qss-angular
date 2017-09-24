@@ -2,7 +2,7 @@ import {Component, Input, DoCheck, OnChanges, SimpleChanges} from "@angular/core
 import {UserEntity} from "../../../../entities/user.entity";
 import {DiffusionLink} from "../../../../caches/diffusion.link";
 import {AuthService} from "../../../../services/auth.service";
-import {ScheduleService} from "../../../../services/schedule.service";
+import {ScheduleService} from "../../../../services/http/schedule.service";
 import {ScheduleEntity} from "../../../../entities/schedule.entity";
 import {ViewChild} from "@angular/core";
 import {FooterControl} from "../../../../controls/footer.control";
@@ -47,7 +47,7 @@ import {DiffusionInterface} from "../../../../interfaces/diffusion.interface";
     <ng-template md-tab-label >
       COMENTARIOS
     </ng-template>
-    <user-comments [userId]="user.id"></user-comments>
+    <user-publications [userId]="user.id"></user-publications>
   </md-tab>
   
   <md-tab>
