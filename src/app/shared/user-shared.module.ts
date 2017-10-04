@@ -12,6 +12,8 @@ import {ScheduleListComponent} from "./components/schedule-list.component";
 import {SchedulesByDayPipe} from "./pipes/schedules-by-day.pipe";
 import {LocationListComponent} from "./components/location-list.component";
 import {LongClickDirective} from "../directives/long-click.directive";
+import {UserListComponent} from "./components/user-list.component";
+import {RouterModule} from "@angular/router";
 
 
 
@@ -19,6 +21,7 @@ import {LongClickDirective} from "../directives/long-click.directive";
   imports: [
     CommonModule,
     MaterialBaseModule,
+    RouterModule,
     MdTabsModule,
     MdListModule
   ],
@@ -29,7 +32,8 @@ import {LongClickDirective} from "../directives/long-click.directive";
     UserActionComponent,
     ScheduleListComponent,
     LocationListComponent,
-    SchedulesByDayPipe
+    SchedulesByDayPipe,
+    UserListComponent
   ],
   exports: [
     FollowActionDirective,
@@ -37,7 +41,8 @@ import {LongClickDirective} from "../directives/long-click.directive";
     LongClickDirective,
     UserActionComponent,
     ScheduleListComponent,
-    LocationListComponent
+    LocationListComponent,
+    UserListComponent
   ]
 })
 export class UserSharedModule { }

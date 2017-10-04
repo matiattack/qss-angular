@@ -53,7 +53,7 @@ export class InputAddressComponent {
     let request = { reference: prediction.id };
 
     let title: string = 'Nueva dirección';
-    let subtitle: string = '¿Seguro desea agregar la dirección \''.concat(prediction.name).concat('\' a sus direcciones?');
+    let subtitle: string = '¿Desea seleccionar \''.concat(prediction.name).concat('\'?');
     let okText: string = 'SI';
     let cancelText: string = 'VOLVER';
 

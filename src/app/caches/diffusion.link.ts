@@ -21,9 +21,9 @@ export class DiffusionLink {
   constructor(private router: Router) {}
 
   /*Prepare to add publications*/
-  public addDiffusionLink(diffusion: DiffusionInterface): void {
+  public addDiffusionLink(diffusion: DiffusionInterface, isEvent?: boolean): void {
     this.diffusionData = diffusion;
-    this.router.navigate(['publication/add']);
+    this.router.navigate([(isEvent)?'event/add':'publication/add']);
   }
 
   public getDiffusionLinkData(): DiffusionInterface {
@@ -33,6 +33,10 @@ export class DiffusionLink {
     return this.diffusionData;
   }
   /*End prepare to add publications*/
+
+  public getEventLinkData(): DiffusionInterface {
+    return this.diffusionData;
+  }
 
   /*Prepare to diffusion detail*/
   public diffusionDetailLink(diffusion: UserDiffusionEntity): void {
@@ -44,6 +48,8 @@ export class DiffusionLink {
     return this.diffusionDetailCache;
   }
   /*End prepare to diffusion detail*/
+
+
 
   public commentableContent(): Subject<string> {
     return this.commentSubject;

@@ -26,6 +26,7 @@ import {RegistrationComponent} from "./modules/registration/components/registrat
 import {RegistrationFormComponent} from "./shared/forms/registration.form";
 import {FooterComponent} from "./shared/components/footer.component";
 import {FooterControl} from "./controls/footer.control";
+import {UnsplashService} from "./services/http/unsplash.service";
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import {FooterControl} from "./controls/footer.control";
     UserDiffusionService,
     UserService,
     DialogService,
-    FooterControl
+    FooterControl,
+    UnsplashService
   ],
   bootstrap: [AppComponent]
 })

@@ -11,7 +11,7 @@ import {DiffusionLink} from "../../../../caches/diffusion.link";
   selector: 'discipline-detail-tabs',
   template: `
 <md-card>
-  <img md-card-image src="http://localhost/qss-core/public/images/static/image8.jpg" >
+  <!--<img md-card-image src="http://localhost/qss-core/public/images/static/image8.jpg" >-->
   <md-card-title>{{discipline.name}}</md-card-title>
   <md-card-subtitle style="margin-top: 10px;">
     <p>{{discipline.description}}</p>
@@ -19,8 +19,8 @@ import {DiffusionLink} from "../../../../caches/diffusion.link";
   <md-card-actions>
     <button md-button disabled class="pull-left">{{countFollowers}} <md-icon>people_outline</md-icon></button>
     <div *ngIf="isFollowing;">
-      <button md-raised-button class="pull-right" color="primary">Evento</button>
-      <button md-raised-button class="pull-right" color="primary" (click)="addDiffusion();">Publicacion</button>
+      <button md-raised-button class="pull-right" color="primary" (click)="addDiffusion(true);">Evento</button>
+      <button md-raised-button class="pull-right" color="primary" (click)="addDiffusion(false);">Publicacion</button>
     </div>
     <div style="clear: both;"></div>
   </md-card-actions>
@@ -30,7 +30,7 @@ import {DiffusionLink} from "../../../../caches/diffusion.link";
 
   <md-tab>
     <ng-template md-tab-label >
-      EVENTOS Y PUBLICACIONES
+      PUBLICACIONES
     </ng-template>
     <discipline-publications [disciplineId]="discipline.id"></discipline-publications>
   </md-tab>
@@ -82,8 +82,11 @@ export class DisciplineDetailTabsComponent {
     }
   }
 
-  addDiffusion(): void {
-    this.diffusionLink.addDiffusionLink(<DiffusionInterface>{disciplines: [this.discipline]});
+  addDiffusion(isEvent: boolean): void {
+    this.diffusionLink.addDiffusionLink(
+      <DiffusionInterface>{
+        disciplines: [this.discipline]
+      }, isEvent);
   }
 
 }

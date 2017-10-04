@@ -14,6 +14,7 @@ export const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },*/
   { path: 'login', loadChildren: 'app/modules/login/login.module#LoginModule' },
   { path: 'publication', loadChildren: 'app/modules/publication/publication.module#PublicationModule' },
+  { path: 'event', loadChildren: 'app/modules/event/event.module#EventModule' },
   { path: 'registration', component: RegistrationComponent },
   { path: '**', redirectTo: 'home'},
 ];

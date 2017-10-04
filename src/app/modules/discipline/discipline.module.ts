@@ -14,10 +14,9 @@ import {DisciplineDetailComponent} from "./components/discipline-detail.componen
 import {DisciplineFilterComponent} from "./components/discipline-home/discipline-filter.component";
 import {DisciplineDetailTabsComponent} from "./components/discipline-detail/discipline-detail-tabs.component";
 import {DisciplineFollowersComponent} from "./components/discipline-detail/discipline-followers.component";
-import {UserListComponent} from "../../shared/components/user-list.component";
-import {FollowActionDirective} from "../../directives/follow-action-directive";
 import {DisciplinePublicationsComponent} from "./components/discipline-detail/discipline-publications.component";
 import {SharedBaseModule} from "../../shared/shared-base.module";
+import {UserSharedModule} from "../../shared/user-shared.module";
 
 @NgModule({
   imports: [
@@ -31,6 +30,7 @@ import {SharedBaseModule} from "../../shared/shared-base.module";
     MdSelectModule,
     MdChipsModule,
     SharedBaseModule,
+    UserSharedModule,
     MdTabsModule
   ],
   declarations: [
@@ -39,9 +39,7 @@ import {SharedBaseModule} from "../../shared/shared-base.module";
     DisciplineFilterComponent,
     DisciplineDetailTabsComponent,
     DisciplineFollowersComponent,
-    DisciplinePublicationsComponent,
-    UserListComponent,
-    FollowActionDirective
+    DisciplinePublicationsComponent
   ],
   providers: [
     DisciplineService

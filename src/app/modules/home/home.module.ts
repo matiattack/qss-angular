@@ -7,6 +7,7 @@ import {MdTabsModule} from '@angular/material';
 import {HomeComponent} from "./components/home.component";
 import {HomeRoutingModule} from "./home-routing.module";
 import {MaterialBaseModule} from "../../shared/material-base.module";
+import {UserSharedModule} from "../../shared/user-shared.module";
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {MaterialBaseModule} from "../../shared/material-base.module";
     HttpModule,
     HomeRoutingModule,
     MaterialBaseModule,
+    UserSharedModule,
     MdTabsModule
   ],
   declarations: [
