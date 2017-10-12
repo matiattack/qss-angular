@@ -24,6 +24,7 @@ import {UnsplashEntity} from "../../../entities/unsplash.entity";
   align-items: center;
 }
 </style>
+
 <md-accordion class="example-headers-align">
   
   <md-expansion-panel [expanded]="step === 0" (opened)="setStep(0); eventName.focus();" hideToggle="true">
