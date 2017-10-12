@@ -85,7 +85,7 @@ export class UserDiffusionService implements HttpBase {
       if(input.metaTags.hasOwnProperty('description')){
         linkDataObject.description = input.metaTags.description.value;
       }
-      if(input.metaTags.hasOwnProperty('image')){
+      if(input.metaTags.hasOwnProperty('coverImage')){
         linkDataObject.image = input.metaTags.image.value;
       }
     }

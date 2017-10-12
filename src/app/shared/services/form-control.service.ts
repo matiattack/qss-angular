@@ -42,6 +42,26 @@ export class FormControlService {
     });
   }
 
+  public addEventFormControl(): FormGroup {
+    return new FormGroup ({
+      name: new FormControl('', [
+        Validators.required]),
+      start: new FormControl('', [
+        Validators.required,
+        Validators.pattern(this.hourPattern)]),
+      end: new FormControl('', [
+        Validators.required,
+        Validators.pattern(this.hourPattern)]),
+      date: new FormControl('', [
+        Validators.required/*, Validators.pattern(this.datePattern)*/]),
+    }, (formGroup: FormGroup) => {
+      if(formGroup.controls.start.pristine || formGroup.controls.end.pristine){
+        return null
+      }
+      return this.startAndEndHourValidation(formGroup.controls.start.value, formGroup.controls.end.value);
+    });
+  }
+
   public startAndEndHourValidation(start: string, end: string){
 
     let _start = new Date('1990-07-22T'.concat(start));

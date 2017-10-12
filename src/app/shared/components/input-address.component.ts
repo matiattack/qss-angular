@@ -6,6 +6,7 @@ import {Prediction, AddressPredictionDirective} from "../../directives/address-p
 import {DialogService} from "../services/dialog.service";
 import {StreetEntity} from "../../entities/street.entity";
 import {LocationInterface} from "../../interfaces/location.interface";
+import {CityEntity} from "../../entities/city.entity";
 
 @Component({
   selector: 'input-address',
@@ -14,8 +15,9 @@ import {LocationInterface} from "../../interfaces/location.interface";
 <div #placeService></div>
 <md-input-container class="full-width">
   <input type="text" mdInput addressPrediction (onpredict)="showPredictions($event);" (onsearching)="searching = true;" placeholder="Ingrese una dirección">
-  <md-hint align="end" *ngIf="searching">Buscando...</md-hint>
 </md-input-container>
+
+<md-progress-bar mode="indeterminate" *ngIf="searching"></md-progress-bar>
 
 <div *ngIf="predictions.length > 0 && !searching">
 <md-nav-list>
@@ -32,7 +34,7 @@ import {LocationInterface} from "../../interfaces/location.interface";
 export class InputAddressComponent {
 
   @Output()
-  onaddressselect: EventEmitter<LocationInterface> = new EventEmitter<LocationInterface>();
+  onaddressselect: EventEmitter<StreetEntity> = new EventEmitter<StreetEntity>();
 
   @ViewChild('placeService') placeServiceEl;
 
@@ -65,16 +67,12 @@ export class InputAddressComponent {
 
         AddressPredictionDirective.getplaceService(this.placeServiceEl)
           .getDetails(request , ( details, status )=>{
+
+            let city: CityEntity = new CityEntity(details.address_components[2].long_name, details.address_components[5].long_name, details.address_components[6].long_name);
             let street: StreetEntity = new StreetEntity(details.address_components[1].long_name, details.address_components[0].long_name, details.geometry.location.lat(), details.geometry.location.lng());
+            street.city = city;
 
-            let location: LocationInterface = {
-                street: street,
-                city: details.address_components[2].long_name,
-                state: details.address_components[5].long_name,
-                country: details.address_components[6].long_name
-            };
-
-            this.onaddressselect.emit(location);
+            this.onaddressselect.emit(street);
           });
       }
     });

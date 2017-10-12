@@ -15,7 +15,6 @@ import {FooterInterface} from "./interfaces/footer.interface";
 @Component({
   selector: 'app-root',
   template: `
-
 <style>
 .example-fab {
   position: fixed;
@@ -39,11 +38,14 @@ import {FooterInterface} from "./interfaces/footer.interface";
   z-index: 2;
   width: 100%  !important;
 }
+.has-toolbar{
+  padding-top: 56px;
+}
 </style>
 
 <app-toolbar (onMenu)="sidenav.toggle();" style="position: fixed; top:0; left: 0px; z-index: 1000; width: 100%;"></app-toolbar>
 
-<md-sidenav-container style="padding-top: 56px;">
+<md-sidenav-container [ngClass]="{'has-toolbar': hasToolbar}">
   <md-sidenav #sidenav class="app-sidenav" style="padding-top: 56px;" mode="over">
     
     <md-nav-list *ngIf="userApp != null">    
@@ -92,6 +94,7 @@ export class AppComponent implements OnInit {
 
   appHeight: any;
   userApp: UserEntity = null;
+  hasToolbar: boolean = true;
   footer: FooterInterface;
 
   userForPost: UserEntity = null;
@@ -107,6 +110,10 @@ export class AppComponent implements OnInit {
   ){ }
 
   ngOnInit(){
+
+    this.toolbarService.getToolbar().subscribe( toolbar => {
+      this.hasToolbar = !toolbar.hidden;
+    })
 
     this.appHeight = (window.screen.height - 56) + "px";
 

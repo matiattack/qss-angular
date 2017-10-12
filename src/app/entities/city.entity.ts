@@ -2,22 +2,21 @@ import {EntityBase, IEntityBase} from "./base/entity-base.entity";
 
 export class CityEntity extends EntityBase<CityEntity> implements IEntityBase {
 
-  private _id: number;
-  private _name: string;
+  id: number;
+  name: string;
+  state: string;
+  country: string;
+
+  constructor(name?: string, state?: string, country?: string){
+    super();
+    this.name = name;
+    this.state = state;
+    this.country = country;
+  }
 
   setAttributes(input: any): void {
-
-    this._id = input.id;
-    this._name = input.nombre;
-
-  }
-
-  get id(): number {
-    return this._id;
-  }
-
-  get name(): string {
-    return this._name;
+    this.id = input.id;
+    this.name = input.nombre;
   }
 
   getObject(): CityEntity {

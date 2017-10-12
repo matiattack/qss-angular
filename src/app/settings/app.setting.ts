@@ -12,5 +12,22 @@ export class AppSetting {
     }
     return AppSetting.API_ENDPOINT + uri + '?token=' + localStorage.getItem('token');
   }
+
+  public static MONTH(index: number): string {
+    let months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+    return months[index];
+  }
+
+  public static FORMATDATE(date): string {
+    let d = new Date(date),
+    month = '' + (d.getMonth() + 1),
+    day = '' + d.getDate(),
+    year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+  }
 }
 

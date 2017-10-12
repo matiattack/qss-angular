@@ -29,11 +29,23 @@ import {
     ])
   ],
   template: `
+<style>
+.diffusion-user-name {
+  color: rgba(0,0,0,.87) !important;
+  text-decoration: none !important;
+  font-size: 16px;
+  font-weight: 400 !important;
+}
+</style>
 <md-card class="diffusion-item" *ngIf="publication != null">
   
   <md-card-header class="diffusion-header" *ngIf="publication.user != null">
+  
     <img md-card-avatar src="{{publication.user.image.path}}" style="width: 46px;">
-    <md-card-title class="diffusion-user"><a routerLink="/user/{{publication.user.id}}">{{publication.user.name}} {{publication.user.lastName}}</a></md-card-title>
+    <md-card-title class="diffusion-user">
+      <a class="diffusion-user-name" routerLink="/user/{{publication.user.id}}">{{publication.user.name}} {{publication.user.lastName}}</a>
+    </md-card-title>
+    
     <md-card-subtitle class="diffusion-date">{{publication.registry}}</md-card-subtitle>
   </md-card-header>
   

@@ -2,17 +2,22 @@ import {Injectable} from "@angular/core";
 import {Http, RequestOptions, Headers} from "@angular/http";
 import {EntityBase} from "../../entities/base/entity-base.entity";
 import {UnsplashEntity} from "../../entities/unsplash.entity";
+import {UnsplashResponse} from "./response/unsplash.response";
+import {Observable} from "rxjs";
 
 @Injectable()
 export class UnsplashService {
 
   constructor(private http: Http) {}
 
-  getByKeyWord(keyword: string){
-    return this.http.get('https://api.unsplash.com/search/photos?page=1&per_page=10&query='.concat(keyword), this.headerOptions)
+  getByKeyWord(keyword: string, page: number): Observable<UnsplashResponse>{
+    return this.http.get('https://api.unsplash.com/search/photos?page=' + page + '&per_page=6&query='.concat(keyword), this.headerOptions)
       .map(response => {
-        console.log('getByKeyWord', response.json());
-        return EntityBase.parseArray(UnsplashEntity, response.json().results);
+        return <UnsplashResponse>{
+          total: response.json().total,
+          totalPages: response.json().total_pages,
+          data: EntityBase.parseArray(UnsplashEntity, response.json().results)
+        };
       });
 
   }
