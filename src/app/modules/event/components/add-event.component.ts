@@ -27,6 +27,7 @@ import {EventService} from "../../../services/http/event.service";
   align-items: center;
 }
 </style>
+
 <form [formGroup]="addEventFormControl" novalidate>
 <md-card style="margin-bottom: 10px;">
   <md-card-title-group>
